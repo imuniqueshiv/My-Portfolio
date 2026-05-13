@@ -77,7 +77,7 @@ let backend =
   ["Node.js" "Express" "Prisma" "REST APIs"]
 
 let ai_ml =
-["Python" "TensorFlow" "PyTorch" "LLMs"]
+  ["Python" "TensorFlow" "PyTorch" "LLMs"]
 
 let database =
   ["PostgreSQL" "MongoDB" "Redis"]
