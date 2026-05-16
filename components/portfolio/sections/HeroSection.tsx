@@ -35,7 +35,7 @@ export function HeroSection() {
             transition={{ delay: 0.2, duration: 0.8, ease: smoothEasing }}
             className="font-mono text-xs sm:text-sm tracking-[0.3em] text-pink-400/80 uppercase mb-5"
           >
-            AI/ML Engineer &amp; Full Stack Developer
+            AI/ML Student &amp; Full Stack Developer
           </motion.p>
 
           <motion.h1
