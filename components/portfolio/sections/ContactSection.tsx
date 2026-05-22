@@ -335,7 +335,9 @@ export function ContactSection() {
 
     <p
       className="
+        cursor-pointer
         text-white/45
+        hover:text-red-400
         text-[11px]
 
         font-mono
@@ -364,7 +366,9 @@ export function ContactSection() {
 
       <span
         className="
+          cursor-pointer
           text-white/45
+          hover:text-green-500
           text-[10px]
 
           uppercase

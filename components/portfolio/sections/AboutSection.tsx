@@ -7,9 +7,7 @@ import { SectionBackground } from "@/components/ui/SectionBackground";
 import { CERTS } from "../data/portfolioData";
 import { SectionHeading } from "../shared/SectionHeading";
 import { SectionLabel } from "../shared/SectionLabel";
-import { InlineTyper } from "@/components/shared/InlineTyper";
 
-// Smooth entrance config – only opacity + translateY, composited
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 },
@@ -22,9 +20,6 @@ const viewportConfig = (amount = 0.3) => ({
 
 export function AboutSection() {
   const sectionRef = useRef(null);
-
-  // Only needed to trigger the typing effect – not for any layout animation
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   return (
     <SectionBackground variant="education" glowColor="pink">
@@ -68,7 +63,7 @@ export function AboutSection() {
               </motion.div>
             </div>
 
-            {/* Right Terminal – keep the cool typer effect */}
+            {/* Right Terminal */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -98,19 +93,8 @@ export function AboutSection() {
                   {/* Education */}
                   <div>
                     <p className="text-cyan-400 text-xs mb-3 flex items-center gap-2">
-                      <span className="text-pink-500">
-                        <InlineTyper
-                          text="root@hypercore:~#"
-                          speed={6}
-                          start={isInView}
-                        />
-                      </span>
-                      <InlineTyper
-                        text="./fetch --education"
-                        speed={7}
-                        delay={250}
-                        start={isInView}
-                      />
+                      <span className="text-pink-500">root@hypercore:~#</span>
+                      ./fetch --education
                     </p>
 
                     <div className="relative ml-2 space-y-4">
@@ -119,56 +103,26 @@ export function AboutSection() {
                       <div className="relative pl-6 group/item transition-all duration-300 hover:translate-x-1">
                         <div className="absolute left-[0px] top-1.5 w-2 h-2 rounded-full bg-pink-400 shadow-[0_0_12px_rgba(236,72,153,1)] animate-pulse" />
                         <p className="text-white/90 font-medium text-sm mb-1 group-hover/item:text-pink-300 transition-colors">
-                          <InlineTyper
-                            text="B.Tech — Artificial Intelligence/ Machine Learning"
-                            speed={8}
-                            delay={700}
-                            start={isInView}
-                          />
+                          B.Tech — Artificial Intelligence/ Machine Learning
                         </p>
                         <p className="text-white/50 text-xs">
-                          <InlineTyper
-                            text="Sagar Institute of Research and Technology, Bhopal"
-                            speed={6}
-                            delay={1400}
-                            start={isInView}
-                          />
+                          Sagar Institute of Research and Technology, Bhopal
                         </p>
                         <p className="text-pink-400/80 text-[10px] mt-1 tracking-widest font-semibold uppercase">
-                          <InlineTyper
-                            text="[ STATUS: IN_PROGRESS | 2024 — Present ]"
-                            speed={5}
-                            delay={2100}
-                            start={isInView}
-                          />
+                          [ STATUS: IN_PROGRESS | 2024 — Present ]
                         </p>
                       </div>
 
                       <div className="relative pl-6 group/item transition-all duration-300 hover:translate-x-1">
                         <div className="absolute left-[0px] top-1.5 w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
                         <p className="text-white/90 font-medium text-sm mb-1 group-hover/item:text-cyan-300 transition-colors">
-                          <InlineTyper
-                            text="Higher Secondary (XII) — PCM"
-                            speed={8}
-                            delay={3000}
-                            start={isInView}
-                          />
+                          Higher Secondary (XII) — PCM
                         </p>
                         <p className="text-white/50 text-xs">
-                          <InlineTyper
-                            text="D.N. Jain Higher Secondary School, Jabalpur"
-                            speed={6}
-                            delay={3700}
-                            start={isInView}
-                          />
+                          D.N. Jain Higher Secondary School, Jabalpur
                         </p>
                         <p className="text-green-400/80 text-[10px] mt-1 tracking-widest font-semibold uppercase">
-                          <InlineTyper
-                            text="[ STATUS: COMPLETED | 2021 ]"
-                            speed={5}
-                            delay={4400}
-                            start={isInView}
-                          />
+                          [ STATUS: COMPLETED | 2021 ]
                         </p>
                       </div>
                     </div>
@@ -177,26 +131,14 @@ export function AboutSection() {
                   {/* Certifications */}
                   <div className="pt-1">
                     <p className="text-cyan-400 text-xs mb-3 flex items-center gap-2">
-                      <span className="text-pink-500">
-                        <InlineTyper
-                          text="root@hypercore:~#"
-                          speed={6}
-                          delay={5200}
-                          start={isInView}
-                        />
-                      </span>
-                      <InlineTyper
-                        text="./fetch --certifications"
-                        speed={7}
-                        delay={5700}
-                        start={isInView}
-                      />
+                      <span className="text-pink-500">root@hypercore:~#</span>
+                      ./fetch --certifications
                     </p>
 
                     <div className="relative ml-2 space-y-2">
                       <div className="absolute left-[3px] top-2 bottom-2 w-px bg-gradient-to-b from-green-500/40 to-transparent" />
 
-                      {CERTS.map((cert, index) => (
+                      {CERTS.map((cert) => (
                         <div
                           key={cert}
                           className="relative pl-6 flex items-start gap-1 text-white/70 text-xs group/cert transition-all duration-300 hover:translate-x-1 hover:text-white/90"
@@ -204,12 +146,7 @@ export function AboutSection() {
                           <span className="absolute left-[0px] top-0.5 text-green-400 text-[10px] drop-shadow-[0_0_5px_rgba(74,222,128,0.8)]">
                             ✔
                           </span>
-                          <InlineTyper
-                            text={cert}
-                            speed={6}
-                            delay={6600 + index * 500}
-                            start={isInView}
-                          />
+                          {cert}
                         </div>
                       ))}
                     </div>
